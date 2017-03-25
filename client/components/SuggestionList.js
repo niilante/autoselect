@@ -2,9 +2,18 @@ import React from 'react';
 import Suggestion from './Suggestion';
 
 function SuggestionList(props) {
-    return <div>{props.suggestions.map(suggestion =>
-        <Suggestion key={suggestion.id} suggestion={suggestion}/>
-    )}</div>;
+    let suggestions = [];
+    props.suggestions.forEach(suggestion => {
+        if (suggestion.text.indexOf(props.filterText) === -1) {
+            return;
+        }
+
+        suggestions.push(
+            <Suggestion key={suggestion.id} text={suggestion.text} />
+        );
+    });
+
+    return <div>{suggestions}</div>;
 }
 
 export default SuggestionList;

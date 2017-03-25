@@ -1,9 +1,13 @@
 import React from 'react';
 
-function SearchBar()
+function SearchBar(props)
 {
     return <form>
-        <input type="text" placeholder="Type and select..."/>
+        <input
+            type="text"
+            placeholder="Type and select..."
+            value={props.filterText}
+        />
     </form>
 }
 

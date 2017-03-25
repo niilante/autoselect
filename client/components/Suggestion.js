@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Suggestion(props) {
-    return <div>{props.suggestion.text}</div>;
+    return <div>{props.text}</div>;
 }
 
 export default Suggestion;

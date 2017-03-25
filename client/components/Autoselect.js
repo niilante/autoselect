@@ -2,11 +2,24 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import SuggestionList from './SuggestionList';
 
-function Autoselect(props) {
-    return <div>
-        <SearchBar />
-        <SuggestionList suggestions={props.suggestions} />
-    </div>;
+class Autoselect extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            filterText: ''
+        };
+    }
+
+    render() {
+        return <div>
+            <SearchBar filterText={this.state.filterText} />
+            <SuggestionList
+                filterText={this.state.filterText}
+                suggestions={this.props.suggestions}
+            />
+        </div>;
+    }
 }
 
 export default Autoselect;

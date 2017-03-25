@@ -3,9 +3,11 @@ import ReactDom from 'react-dom';
 import Autoselect from './components/Autoselect';
 
 const suggestions = [
-    { id: 0, text: 'a' },
-    { id: 1, text: 'b' },
-    { id: 2, text: 'c' },
+    { id: 0, text: 'apple' },
+    { id: 1, text: 'ball' },
+    { id: 2, text: 'cat' },
+    { id: 3, text: 'dog' },
+    { id: 4, text: 'elephant' }
 ];
 
 ReactDom.render(
