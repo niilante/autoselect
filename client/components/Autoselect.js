@@ -9,11 +9,22 @@ class Autoselect extends React.Component {
         this.state = {
             filterText: ''
         };
+
+        this.handleUserInput = this.handleUserInput.bind(this);
+    }
+
+    handleUserInput(filterText) {
+        this.setState({
+            filterText: filterText
+        });
     }
 
     render() {
         return <div>
-            <SearchBar filterText={this.state.filterText} />
+            <SearchBar
+                filterText={this.state.filterText}
+                onUserInput={this.handleUserInput}
+            />
             <SuggestionList
                 filterText={this.state.filterText}
                 suggestions={this.props.suggestions}
