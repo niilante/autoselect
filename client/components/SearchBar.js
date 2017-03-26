@@ -12,12 +12,15 @@ class SearchBar extends React.Component {
     }
 
     render() {
-        return <form>
+        return <form className="search-bar">
             <input
                 type="text"
                 placeholder="Type and select..."
+                value={this.props.filterText}
                 ref={(input) => this.filterTextInput = input}
                 onChange={this.handleChange}
+                onFocus={this.props.handleFocus}
+                onBlur={this.props.handleBlur}
             />
         </form>
     }

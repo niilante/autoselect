@@ -1,0 +1,40 @@
+.autoselect {
+    position: relative;
+    width: 200px;
+    border-style: double;
+    border-width: medium;
+    border-color: gray;
+    border-radius: 8px;
+}
+
+.search-bar {
+    width: inherit;
+    border-style: inherit;
+    border-width: inherit;
+    border-color: inherit;
+    border-radius: inherit;
+}
+
+.search-bar input {
+    width: inherit;
+}
+
+.suggestion-list {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-style: inherit;
+    border-width: inherit;
+    border-color: inherit;
+    border-radius: inherit;
+}
+
+.suggestion-list.is-open {
+    display: block;
+}
+
+.suggestion:hover {
+    background-color: #cacaca;
+}

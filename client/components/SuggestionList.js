@@ -9,11 +9,26 @@ function SuggestionList(props) {
         }
 
         suggestions.push(
-            <Suggestion key={suggestion.id} text={suggestion.text} />
+            <Suggestion
+                key={suggestion.id}
+                text={suggestion.text}
+                onUserClick={props.onUserClick}
+            />
         );
     });
 
-    return <div>{suggestions}</div>;
+    let classNames = 'suggestion-list';
+    classNames += props.isOpen ? ' is-open' : '';
+
+    return (
+        <div
+            className={classNames}
+            onFocus={props.onFocus}
+            onBlur={props.onBlur}
+        >
+            {suggestions}
+        </div>
+    );
 }
 
 export default SuggestionList;

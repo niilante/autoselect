@@ -7,10 +7,13 @@ class Autoselect extends React.Component {
         super(props);
 
         this.state = {
-            filterText: ''
+            filterText: '',
+            isOpen: false
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     handleUserInput(filterText) {
@@ -19,15 +22,31 @@ class Autoselect extends React.Component {
         });
     }
 
+    handleFocus() {
+        this.setState({
+            isOpen: true
+        });
+    }
+
+    handleBlur() {
+        this.setState({
+            isOpen: false
+        });
+    }
+
     render() {
-        return <div>
+        return <div className="autoselect">
             <SearchBar
                 filterText={this.state.filterText}
                 onUserInput={this.handleUserInput}
+                handleFocus={this.handleFocus}
+                handleBlur={this.handleBlur}
             />
             <SuggestionList
                 filterText={this.state.filterText}
                 suggestions={this.props.suggestions}
+                isOpen={this.state.isOpen}
+                onUserClick={this.handleUserInput}
             />
         </div>;
     }
