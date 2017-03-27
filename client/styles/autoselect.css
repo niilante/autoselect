@@ -1,6 +1,9 @@
 .autoselect {
     position: relative;
     width: 200px;
+}
+
+.autoselect form {
     border-style: double;
     border-width: medium;
     border-color: gray;
@@ -9,26 +12,26 @@
 
 .search-bar {
     width: inherit;
-    border-style: inherit;
-    border-width: inherit;
-    border-color: inherit;
-    border-radius: inherit;
 }
 
 .search-bar input {
     width: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .suggestion-list {
+    margin-top: 2px;
     position: absolute;
     display: none;
     z-index: 100;
     width: 100%;
     background-color: #FFFFFF;
-    border-style: inherit;
-    border-width: inherit;
-    border-color: inherit;
-    border-radius: inherit;
+    border-style: double;
+    border-width: medium;
+    border-color: gray;
+    border-radius: 8px;
 }
 
 .suggestion-list.is-open {
